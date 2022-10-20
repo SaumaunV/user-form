@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { FormEvent, useEffect, useState } from "react";
+import {
+  AiOutlineMail,
+  AiOutlineUser,
+  AiOutlineLock,
+  AiOutlineCaretDown,
+} from "react-icons/ai";
 
 const Home: NextPage = () => {
   interface DataType {
@@ -66,7 +72,7 @@ const Home: NextPage = () => {
       setOccupations(data.occupations);
       setStates(data.states);
     }
-    getData();
+    getData().catch(console.error);
   }, []);
 
   return (
@@ -85,7 +91,7 @@ const Home: NextPage = () => {
           User Creation Form
         </h1>
         <div className="px-8 pb-8 min-w-[300px]">
-          <div className="flex mt-4">
+          <div className="input-text">
             <label htmlFor="name" hidden>
               Full Name
             </label>
@@ -97,11 +103,12 @@ const Home: NextPage = () => {
               value={formData.name}
               id="name"
               placeholder="Full Name"
-              className="input-text"
+              className="outline-none"
               required
             />
+            <AiOutlineUser className="input-text-icons" />
           </div>
-          <div className="mt-4 ">
+          <div className="input-text ">
             <label htmlFor="email" hidden>
               Email
             </label>
@@ -113,11 +120,12 @@ const Home: NextPage = () => {
               value={formData.email}
               id="email"
               placeholder="Email"
-              className="input-text"
+              className="outline-none"
               required
             />
+            <AiOutlineMail className="input-text-icons" />
           </div>
-          <div className="mt-4 ">
+          <div className="input-text">
             <label htmlFor="password" hidden>
               Password
             </label>
@@ -129,9 +137,10 @@ const Home: NextPage = () => {
               value={formData.password}
               id="password"
               placeholder="Password"
-              className="input-text"
+              className="outline-none"
               required
             />
+            <AiOutlineLock className="input-text-icons" />
           </div>
           <input
             type="checkbox"
@@ -143,7 +152,7 @@ const Home: NextPage = () => {
             Show Password
           </label>
 
-          <div className="mt-4 ">
+          <div className="relative mt-4 ">
             <label htmlFor="occupation" hidden>
               Occupation
             </label>
@@ -166,13 +175,14 @@ const Home: NextPage = () => {
                 </option>
               ))}
             </select>
+            <AiOutlineCaretDown className="select-icons" />
           </div>
-          <div className="mt-4 ">
+          <div className=" relative mt-4">
             <label htmlFor="state" hidden>
               State
             </label>
             <select
-              onChange={(e) => 
+              onChange={(e) =>
                 setFormData({ ...formData, state: e.target.value })
               }
               name="state"
@@ -190,6 +200,7 @@ const Home: NextPage = () => {
                 </option>
               ))}
             </select>
+            <AiOutlineCaretDown className="select-icons" />
           </div>
           <button
             type="submit"
