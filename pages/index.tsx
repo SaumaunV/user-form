@@ -23,9 +23,7 @@ const Home: NextPage = () => {
   }
 
   const [occupations, setOccupations] = useState<string[]>([]);
-  const [states, setStates] = useState<
-    { name: string; abbreviation: string }[]
-  >([]);
+  const [states, setStates] = useState<{ name: string; abbreviation: string }[]>([]);
   const [formData, setFormData] = useState<FormDataType>({
     name: "",
     email: "",
@@ -146,13 +144,13 @@ const Home: NextPage = () => {
             type="checkbox"
             id="showPassword"
             onChange={(e) => setShowPassword(e.target.checked)}
-            className="mt-2 w-5 h-5 align-text-bottom "
+            className="mt-2 w-5 h-5 align-text-bottom"
           />
           <label htmlFor="showPassword" className="ml-2">
             Show Password
           </label>
 
-          <div className="relative mt-4 ">
+          <div className="relative mt-4">
             <label htmlFor="occupation" hidden>
               Occupation
             </label>
@@ -204,7 +202,7 @@ const Home: NextPage = () => {
           </div>
           <button
             type="submit"
-            className="mt-8 py-1 font-semibold text-white bg-[#5865F2] hover:bg-[#4752C4] transition duration-200 rounded-full w-full "
+            className="mt-8 py-1 font-semibold text-white bg-[#5865F2] hover:bg-[#4752C4] transition duration-200 rounded-full w-full"
           >
             Submit
           </button>
