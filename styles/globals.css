@@ -4,13 +4,21 @@
 
 @layer components {
   .input-text {
-    @apply border-[1px] border-gray-300  outline-none indent-1 text-sm p-3 rounded w-full
+    @apply flex items-center mt-4 border-[1px] border-gray-300  outline-none indent-1 text-sm p-3 rounded w-full
       shadow placeholder:text-gray-500 placeholder:opacity-80
   }
 
   .select-style {
     @apply border-gray-300 border-[1px]  w-full py-3 pl-2 rounded shadow-sm 
-      focus:outline-none hover:cursor-pointer 
+      focus:outline-none hover:cursor-pointer appearance-none 
+  }
+
+  .input-text-icons {
+    @apply ml-5 text-lg text-gray-500
+  }
+
+  .select-icons {
+    @apply absolute h-full top-0 right-0 mr-3 text-base text-black pointer-events-none
   }
 }
 
