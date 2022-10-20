@@ -1,8 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-text {
+    @apply border-[1px] border-gray-300  outline-none indent-1 text-sm p-3 rounded w-full
+      shadow placeholder:text-gray-500 placeholder:opacity-80
+  }
+
+  .select-style {
+    @apply border-gray-300 border-[1px]  w-full py-3 pl-2 rounded shadow-sm 
+      focus:outline-none hover:cursor-pointer 
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -13,14 +29,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
